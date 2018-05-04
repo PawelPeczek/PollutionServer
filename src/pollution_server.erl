@@ -12,7 +12,7 @@ removeValue/4, getOneValue/4, getStationMean/3,
 getDailyMean/3, importFromCSV/2]).
 -author("ppeczek").
 -export([start/0, stop/0, addStation/2, addValue/4, removeValue/3,
-  getOneValue/3, getStationMean/2, getDailyMean/2, importFromCSV/1]).
+        getOneValue/3, getStationMean/2, getDailyMean/2, importFromCSV/1]).
 -export([initialize/0]).
 
 %% API
@@ -54,7 +54,6 @@ callHandler(RequestType, Args) when is_list(Args) ->
 
 
 initialize() ->
-  io:format("Initialize() STARTED~n"),
   Monitor = pollution:createMonitor(),
   mainLoop(Monitor).
 
