@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d68ec8a5-4c58-41b9-b560-ff4a5ad78db4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/server_tests.erl" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/out/production/PollutionProject/pollution_server.beam" afterPath="$PROJECT_DIR$/out/production/PollutionProject/pollution_server.beam" />
-      <change beforePath="$PROJECT_DIR$/out/test/PollutionProject/pollution_server.beam" afterPath="$PROJECT_DIR$/out/test/PollutionProject/pollution_server.beam" />
-      <change beforePath="$PROJECT_DIR$/src/pollution_server.erl" afterPath="$PROJECT_DIR$/src/pollution_server.erl" />
+      <change beforePath="$PROJECT_DIR$/PollutionProject.iml" afterPath="$PROJECT_DIR$/PollutionProject.iml" />
+      <change beforePath="$PROJECT_DIR$/src/monitor_tests.erl" afterPath="$PROJECT_DIR$/tests/monitor_tests.erl" />
+      <change beforePath="$PROJECT_DIR$/src/server_tests.erl" afterPath="$PROJECT_DIR$/tests/server_tests.erl" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +51,7 @@
         </entry>
       </file>
       <file leaf-file-name="server_tests.erl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server_tests.erl">
+        <entry file="file://$PROJECT_DIR$/tests/server_tests.erl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
               <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
@@ -68,14 +64,14 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="monitor_tests.erl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/monitor_tests.erl">
+        <entry file="file://$PROJECT_DIR$/tests/monitor_tests.erl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
@@ -174,20 +170,12 @@
             <path>
               <item name="PollutionProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="PollutionProject" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PollutionProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PollutionProject" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="PollutionProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PollutionProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PollutionProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PollutionProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PollutionProject" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -202,6 +190,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -381,14 +378,11 @@
       <workItem from="1523912467304" duration="7186000" />
       <workItem from="1523958329530" duration="3715000" />
       <workItem from="1525432730364" duration="4905000" />
-      <workItem from="1525440180677" duration="1259000" />
+      <workItem from="1525440180677" duration="1423000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="server_tests - 2018.05.04 at 15h 24m 06s.xml">
-      <configuration name="server_tests" configurationId="ErlangUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="server_tests - 2018.05.04 at 15h 27m 09s.xml">
       <configuration name="server_tests" configurationId="ErlangUnitRunConfigurationType" />
     </history-entry>
@@ -416,9 +410,12 @@
     <history-entry file="server_tests - 2018.05.04 at 15h 41m 29s.xml">
       <configuration name="server_tests" configurationId="ErlangUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="server_tests - 2018.05.04 at 15h 46m 34s.xml">
+      <configuration name="server_tests" configurationId="ErlangUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48657000" />
+    <option name="totallyTimeSpent" value="48821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="189" width="1366" height="741" extended-state="6" />
@@ -488,7 +485,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/monitor_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/monitor_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
@@ -496,7 +493,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/server_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
@@ -520,7 +517,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/monitor_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/monitor_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
           <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="35" />
@@ -528,7 +525,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/monitor_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/monitor_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2826">
           <caret line="157" column="96" lean-forward="false" selection-start-line="157" selection-start-column="96" selection-end-line="157" selection-end-column="96" />
@@ -582,7 +579,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/monitor_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/monitor_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
@@ -598,7 +595,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server_tests.erl">
+    <entry file="file://$PROJECT_DIR$/tests/server_tests.erl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
@@ -609,10 +606,85 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Erlang</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PollutionProject</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
