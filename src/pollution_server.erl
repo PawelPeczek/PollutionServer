@@ -12,7 +12,7 @@ removeValue/4, getOneValue/4, getStationMean/3,
 getDailyMean/3, importFromCSV/2]).
 -author("ppeczek").
 -export([start/0, stop/0, addStation/2, addValue/4, removeValue/3,
-        getOneValue/3, getStationMean/2, getDailyMean/2, importFromCSV/1]).
+        getOneValue/3, getStationMean/2, getDailyMean/2, importFromCSV/1, crash/0]).
 -export([initialize/0]).
 
 %% API
@@ -42,6 +42,10 @@ importFromCSV(FileName) ->
   callHandler(import_from_csv, [FileName]).
 
 %% API END
+
+%% TEST CRASH API
+crash() -> callHandler(crash, []).
+%% END CRASH API
 
 
 callHandler(RequestType, Args) when is_list(Args) ->
@@ -82,6 +86,8 @@ mainLoop(Monitor) ->
       handleStatusRequest(Pid, Monitor, NewMonitor);
     {request, Pid, stop, []} ->
       Pid ! {reply, ok};
+    {request, Pid, crash, []} ->
+      handleValueRequest(Pid, 1 / 0, Monitor);
     {request, Pid, _, _} ->
       Pid ! {reply, error, badRequest},
       mainLoop(Monitor)
