@@ -9,10 +9,9 @@
 -module(server_tests).
 -author("ppeczek").
 
--record(monitor, {names = #{}, coordinates = #{}, stations = #{}}).
--record(measurements, {values = #{}}).
-
+-include_lib("../src/monitor_header.hrl").
 -include_lib("eunit/include/eunit.hrl").
+
 -import(pollution_server, [start/0, stop/0, addStation/2, addValue/4, removeValue/3,
                           getOneValue/3, getStationMean/2, getDailyMean/2, importFromCSV/1]).
 

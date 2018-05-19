@@ -9,17 +9,21 @@
 -module(pollution_gen_server).
 -author("ppeczek").
 -behaviour(gen_server).
--export([init/1, handle_call/3, handle_cast/2, terminate/2]).
+
+-include_lib("monitor_header.hrl").
 
 %%  API
+
+-export([init/1, handle_call/3, handle_cast/2, terminate/2]).
 -export([start_link/0, stop/0, getOneValue/3, addValue/4, addStation/2, removeValue/4]).
 -export([importFromCSV/1, crash/0, getStationMean/2, getDailyMean/2]).
 
 
 start_link() ->
-  gen_server:start_link({local, pollution_gen_server}, ?MODULE, [], []).
+  M = pollution_persistence_server:get_state(),
+  gen_server:start_link({local, pollution_gen_server}, ?MODULE, M, []).
 
-stop() -> gen_server:call(pollution_gen_server, {stop}).
+stop() -> gen_server:cast(pollution_gen_server, {stop}).
 
 getOneValue(NameOrCoords, Date, Type) ->
   gen_server:call(pollution_gen_server, {get_one_value, NameOrCoords, Date, Type}).
@@ -50,10 +54,9 @@ crash() ->
 
 %%  IMPLEMENTATION
 
-init([]) -> {ok, pollution:createMonitor()}.
+init(M) when erlang:is_record(M, monitor) -> {ok, M}.
 
 
-handle_call({stop}, _, LoopData) -> {stop, normal, ok, LoopData};
 handle_call({get_one_value, NameOrCoords, Date, Type}, _, LoopData) ->
   Value = pollution:getOneValue(LoopData, NameOrCoords, Date, Type),
   dispatchValueResponse(Value, LoopData);
@@ -64,6 +67,7 @@ handle_call({get_daily_mean, DateDay, Type}, _, LoopData) ->
   Value = pollution:getDailyMean(LoopData, DateDay, Type),
   dispatchValueResponse(Value, LoopData).
 
+handle_cast({stop}, LoopData) -> {stop, normal, LoopData};
 handle_cast({add_station, Name, Coords}, LoopData) ->
   NewMonitor = pollution:addStation(LoopData, Name, Coords),
   dispatchStatusResponse(NewMonitor, LoopData);
@@ -86,5 +90,9 @@ dispatchStatusResponse(NewMonitor, _) ->
 dispatchValueResponse(Value, LoopData) ->
   {reply, Value, LoopData}.
 
-terminate(_Reason, _State) ->
+terminate(normal, _) ->
+  pollution_persistence_server:stop(),
+  ok;
+terminate(_, State) ->
+  pollution_persistence_server:update_state(State),
   ok.

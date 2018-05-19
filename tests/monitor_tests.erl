@@ -10,9 +10,7 @@
 -author("ppeczek").
 
 -include_lib("eunit/include/eunit.hrl").
-
--record(monitor, {names = #{}, coordinates = #{}, stations = #{}}).
--record(measurements, {values = #{}}).
+-include_lib("../src/monitor_header.hrl").
 
 
 given_one_station_added() ->

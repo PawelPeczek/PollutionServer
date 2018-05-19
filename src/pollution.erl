@@ -8,13 +8,12 @@
 %%%-------------------------------------------------------------------
 -module(pollution).
 -author("ppeczek").
+-include_lib("monitor_header.hrl").
 
 %% API
 -export([createMonitor/0, addStation/3, addValue/5, removeValue/4, getOneValue/4,
          getStationMean/3, getDailyMean/3, importFromCSV/2]).
 
--record(monitor, {names = #{}, coordinates = #{}, stations = #{}}).
--record(measurements, {values = #{}}).
 
 %% Exported functions
 
