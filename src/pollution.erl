@@ -23,7 +23,7 @@ createMonitor() -> #monitor{}.
 addStation(M, Name, {CoordX, CoordY}) when is_integer(CoordX) or is_integer(CoordX) ->
   addStation(M, Name, {float(CoordX), float(CoordY)});
 addStation(M, Name, {CoordX, CoordY})
-  when (CoordX >= 0) and (CoordY >= 0) and (CoordX =< 90) and (CoordY =< 180) and is_list(Name)
+  when (CoordX >= 0) and (CoordY >= 0) and (CoordX =< 90) and (CoordY =< 180)
   and is_float(CoordX) and is_float(CoordY)->
     case isStationAvailable(M, Name, {CoordX, CoordY}) of
       true -> addContentToMonitor(M, Name, {CoordX, CoordY});
@@ -108,8 +108,7 @@ depackNameOrCoordArg(#monitor{names = _, coordinates = C, stations = _}, {CoordX
 depackNameOrCoordArg(#monitor{names = N, coordinates = _, stations = _}, Name) ->
   {Name, maps:get(Name, N)}.
 
-insertNewValueIntoMonitor(#monitor{names = N, coordinates = C, stations = S}, Name, Coords, Date, Type, Value)
-  when is_list(Type)->
+insertNewValueIntoMonitor(#monitor{names = N, coordinates = C, stations = S}, Name, Coords, Date, Type, Value) ->
   Measurements = maps:get({Name, Coords}, S),
   case isMeasurementSlotFree(Measurements, Date, Type) of
     true -> #monitor{
